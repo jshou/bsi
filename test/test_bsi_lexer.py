@@ -22,4 +22,4 @@ class TestBsiLexer(unittest.TestCase):
 
         token_data = [(t.type, t.value) for t in self.lex]
 
-        self.assertEqual(token_data, self.tokens, 'Wrong tokens')
+        self.assertEqual(token_data, self.tokens)
