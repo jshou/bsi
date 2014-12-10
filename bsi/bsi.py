@@ -1,0 +1,2 @@
+class BSI:
+    pass
