@@ -10,9 +10,9 @@ class TestBsiObject(unittest.TestCase):
         self.assertEqual(self.bsi_o.get('key'), 'value')
 
     def test_bsi_object_to_string(self):
-        self.bsi_o.add('k1', 'v1')
-        self.bsi_o.add('k2', 'v2')
+        self.bsi_o.add('k1', 1)
+        self.bsi_o.add('k2', bsi.BsiString('v2'))
 
-        str_obj = 'k1 = v1\nk2 = v2'
+        str_obj = 'k1 = 1\nk2 = "v2"'
 
         self.assertEqual(str(self.bsi_o), str_obj)

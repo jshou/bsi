@@ -11,7 +11,7 @@ class TestBsiLexer(unittest.TestCase):
         self.tokens = [
             ('KEY', 'ip'),
             ('EQ', '='),
-            ('STRING', '"127.0.0.1"'),
+            ('STRING', bsi.BsiString('127.0.0.1')),
             ('KEY', 'port'),
             ('EQ', '='),
             ('NUM', 1337)

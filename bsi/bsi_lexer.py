@@ -1,4 +1,5 @@
 import ply.lex as lex
+from bsi_string import BsiString
 
 tokens = (
     'KEY',
@@ -13,7 +14,10 @@ tokens = (
 
 t_KEY = r'[a-zA-Z0-9_]+'
 
-t_STRING = r'".*"'
+def t_STRING(t):
+    r'".*"'
+    t.value = BsiString(t.value.strip('"'))
+    return t
 
 def t_NUM(t):
     r'\d+'
