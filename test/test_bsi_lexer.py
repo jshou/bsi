@@ -17,9 +17,9 @@ class TestBsiLexer(unittest.TestCase):
             ('NUM', 1337)
         ]
 
-    def test_tokenizing(self):
+    def test_tokenizer_tokenizes_correctly(self):
         self.lex.input(self.data)
 
         token_data = [(t.type, t.value) for t in self.lex]
 
-        self.assertEqual(token_data, self.tokens, 'Wrong tokens')
+        self.assertEqual(token_data, self.tokens)
