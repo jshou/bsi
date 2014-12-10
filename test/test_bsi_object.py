@@ -20,7 +20,7 @@ class TestBsiObject(unittest.TestCase):
     def test_bsi_object_to_string_arrays(self):
         self.bsi_o.set('k1', bsi.BsiArray([1, 2, 3]))
 
-        str_obj = 'k1 = [1 2 3]'
+        str_obj = 'k1 = [ 1 2 3 ]'
 
         self.assertEqual(str(self.bsi_o), str_obj)
 
