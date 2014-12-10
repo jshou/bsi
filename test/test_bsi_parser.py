@@ -30,3 +30,20 @@ class TestBsiParser(unittest.TestCase):
 
         self.assertEqual(obj.get('ports'), bsi.BsiArray([123, 234, 345]))
         self.assertEqual(obj.get('ids'), bsi.BsiArray([1, 2, 3]))
+
+    def test_bsi_parser_parses_nested_objects(self):
+        data = '''
+        player_ids = {
+            Bob = 1
+            Carly = 2
+        }
+        zombie_ids = {
+            DeadBob = 3
+            DeadCarly = 4
+        }
+        '''
+
+        obj = self.parser.parse(data)
+
+        self.assertEqual(obj.get('player_ids').get('Bob'), 1)
+        self.assertEqual(obj.get('zombie_ids').get('DeadBob'), 3)
