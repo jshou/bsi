@@ -19,11 +19,14 @@ class TestBsiParser(unittest.TestCase):
     def test_bsi_parser_parses_arrays(self):
         data = '''
         ports = [123 234 345]
-        ids = [1 2 3]
+        ids = [
+          1
+          2
+          3
+        ]
         '''
 
         obj = self.parser.parse(data)
 
         self.assertEqual(obj.get('ports'), bsi.BsiArray([123, 234, 345]))
         self.assertEqual(obj.get('ids'), bsi.BsiArray([1, 2, 3]))
-
