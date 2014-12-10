@@ -2,6 +2,7 @@ from .bsi_lexer import bsi_lexer
 from .bsi_object import BsiObject
 from .bsi_parser import bsi_parser
 from .bsi_string import BsiString
+from .bsi_array import BsiArray
 
 parser = bsi_parser
 
