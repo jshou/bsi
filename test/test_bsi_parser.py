@@ -8,8 +8,9 @@ class TestBsiParser(unittest.TestCase):
     def test_bsi_parser_parses_simple_objects(self):
         data = '''
         ip = "127.0.0.1"
+        port = 1234
         '''
 
-        bsi_pair = self.parser.parse(data)
+        bsi_pairs = self.parser.parse(data)
 
-        self.assertEqual(bsi_pair.k, 'ip')
+        self.assertEqual(bsi_pairs, [('ip', '"127.0.0.1"'), ('port', 1234)])
