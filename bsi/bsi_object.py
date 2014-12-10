@@ -5,7 +5,7 @@ class BsiObject:
     def __init__(self):
         self.dict = OrderedDict()
 
-    def add(self, k, v):
+    def set(self, k, v):
         self.dict[k] = v
 
     def get(self, k):
