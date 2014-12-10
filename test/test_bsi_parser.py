@@ -14,7 +14,7 @@ class TestBsiParser(unittest.TestCase):
         obj = self.parser.parse(data)
 
         self.assertEqual(obj.get('ip'), bsi.BsiString('127.0.0.1'))
-        self.assertEqual(obj.get('port'), 1234)
+        self.assertEqual(obj.get('port'), bsi.BsiNumber(1234))
 
     def test_bsi_parser_parses_arrays(self):
         data = '''
@@ -28,8 +28,8 @@ class TestBsiParser(unittest.TestCase):
 
         obj = self.parser.parse(data)
 
-        self.assertEqual(obj.get('ports'), bsi.BsiArray([123, 234, 345]))
-        self.assertEqual(obj.get('ids'), bsi.BsiArray([1, 2, 3]))
+        self.assertEqual(obj.get('ports'), bsi.BsiArray([bsi.BsiNumber(123), bsi.BsiNumber(234), bsi.BsiNumber(345)]))
+        self.assertEqual(obj.get('ids'), bsi.BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(3)]))
 
     def test_bsi_parser_parses_nested_objects(self):
         data = '''
@@ -45,5 +45,5 @@ class TestBsiParser(unittest.TestCase):
 
         obj = self.parser.parse(data)
 
-        self.assertEqual(obj.get('player_ids').get('Bob'), 1)
-        self.assertEqual(obj.get('zombie_ids').get('DeadBob'), 3)
+        self.assertEqual(obj.get('player_ids').get('Bob'), bsi.BsiNumber(1))
+        self.assertEqual(obj.get('zombie_ids').get('DeadBob'), bsi.BsiNumber(3))

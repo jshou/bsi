@@ -1,5 +1,6 @@
 import ply.lex as lex
 from bsi_string import BsiString
+from bsi_number import BsiNumber
 
 tokens = (
     'KEY',
@@ -20,8 +21,8 @@ def t_STRING(t):
     return t
 
 def t_NUM(t):
-    r'-?\d+'
-    t.value = int(t.value)
+    r'-?\d+(\.\d+)?'
+    t.value = BsiNumber(t.value)
     return t
 
 t_EQ = r'='

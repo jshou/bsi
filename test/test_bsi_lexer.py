@@ -6,19 +6,19 @@ class TestBsiLexer(unittest.TestCase):
         self.lex = bsi.bsi_lexer
         self.data = '''
         ip = "127.0.0.1"
-        port = 1337
+        float = 1337.3
         number = -3
         '''
         self.tokens = [
             ('KEY', 'ip'),
             ('EQ', '='),
             ('STRING', bsi.BsiString('127.0.0.1')),
-            ('KEY', 'port'),
+            ('KEY', 'float'),
             ('EQ', '='),
-            ('NUM', 1337),
+            ('NUM', bsi.BsiNumber(1337.3)),
             ('KEY', 'number'),
             ('EQ', '='),
-            ('NUM', -3)
+            ('NUM', bsi.BsiNumber(-3))
         ]
 
     def test_tokenizer_tokenizes_correctly(self):

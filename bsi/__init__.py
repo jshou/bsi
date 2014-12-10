@@ -3,6 +3,7 @@ from .bsi_object import BsiObject
 from .bsi_parser import bsi_parser
 from .bsi_string import BsiString
 from .bsi_array import BsiArray
+from .bsi_number import BsiNumber
 
 parser = bsi_parser
 

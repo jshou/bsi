@@ -1,19 +1,20 @@
 import unittest
 from bsi import BsiArray
+import bsi
 
 class TestBsiArray(unittest.TestCase):
     def test_bsi_array_equality(self):
         self.assertEqual(
-            BsiArray([1, 2, 3]),
-            BsiArray([1, 2, 3])
+            BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(3)]),
+            BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(3)])
         )
 
         self.assertNotEqual(
-            BsiArray([1, 2, 3]),
-            BsiArray([1, 2, 4])
+            BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(3)]),
+            BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(4)])
         )
 
     def test_bsi_to_string(self):
-        ba = BsiArray([1, 2, 3])
+        ba = BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(3)])
 
         self.assertEqual(str(ba), '[1 2 3]')
