@@ -41,6 +41,10 @@ def p_array_vals(p):
     'vals : val vals'
     p[0] = [p[1]] + p[2]
 
+def p_val_nested_obj(p):
+    'val : L_BRACE obj R_BRACE'
+    p[0] = p[2]
+
 def p_error(p):
     print p
     print "Syntax error in input!"
