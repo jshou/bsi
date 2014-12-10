@@ -1,4 +1,5 @@
 argparse==1.2.1
+-e git+git@github.com:jshou/bsi.git@112c06f2e134bd812a0e5d703b9bab8291ad68dd#egg=bsi-master
 nose==1.3.4
 ply==3.4
 wsgiref==0.1.2
