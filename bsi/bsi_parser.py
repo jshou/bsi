@@ -1,5 +1,12 @@
 import ply.yacc as yacc
 from bsi_lexer import tokens
+from bsi_object import BsiObject
+
+def p_object_pairs(p):
+    'obj : pairs'
+    p[0] = BsiObject()
+    for pair in p[1]:
+        p[0].add(pair[0], pair[1])
 
 def p_pairs_pair(p):
     'pairs : pair'

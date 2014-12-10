@@ -11,6 +11,7 @@ class TestBsiParser(unittest.TestCase):
         port = 1234
         '''
 
-        bsi_pairs = self.parser.parse(data)
+        obj = self.parser.parse(data)
 
-        self.assertEqual(bsi_pairs, [('ip', '"127.0.0.1"'), ('port', 1234)])
+        self.assertEqual(obj.get('ip'), '"127.0.0.1"')
+        self.assertEqual(obj.get('port'), 1234)
