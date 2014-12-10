@@ -15,6 +15,11 @@ class TestBsiArray(unittest.TestCase):
         )
 
     def test_bsi_to_string(self):
-        ba = BsiArray([bsi.BsiNumber(1), bsi.BsiNumber(2), bsi.BsiNumber(3)])
+        obj = bsi.BsiObject()
+        obj.set('name', bsi.BsiString('Bob'))
 
-        self.assertEqual(str(ba), '[ 1 2 3 ]')
+        ba = BsiArray([obj, bsi.BsiNumber(2), bsi.BsiNumber(3)])
+
+        correct_output = '[ {\n\tname = "Bob"\n} 2 3 ]'
+
+        self.assertEqual(str(ba), correct_output)
