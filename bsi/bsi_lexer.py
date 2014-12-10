@@ -20,7 +20,7 @@ def t_STRING(t):
     return t
 
 def t_NUM(t):
-    r'\d+'
+    r'-?\d+'
     t.value = int(t.value)
     return t
 
