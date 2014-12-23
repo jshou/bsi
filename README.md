@@ -28,3 +28,10 @@ bsi_object = bsi.bsi_parse(data)
 
 print bsi_object.get('zombie1')
 ```
+
+Disclaimer
+----------
+
+This is not a polished product and will need some work in order to be easier to
+work with. For example, the BsiArray class should implement an iterator. I'll
+gladly accept pull requests!
